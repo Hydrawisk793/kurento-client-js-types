@@ -1040,6 +1040,28 @@ declare namespace KurentoClientConstructor
 
     class PlayerEndpoint extends UriEndpoint
     {
+        public static readonly constructorParams : {
+            mediaPipeline : {
+                type : "kurento.MediaPipeline";
+                required : true;
+            };
+
+            uri : {
+                type : "String";
+                required : true;
+            };
+
+            useEncodedMedia : {
+                type : "int";
+                required : false;
+            };
+
+            networkCache : {
+                type : "boolean";
+                required : false;
+            };
+        };
+
         public constructor();
 
         public on<K extends keyof PlayerEndpointEventHandlerMap>(
