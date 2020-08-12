@@ -1268,6 +1268,23 @@ declare namespace KurentoClientConstructor
         FAILED = "FAILED",
     }
 
+    const enum GstreamerDotDetails
+    {
+        SHOW_MEDIA_TYPE = "SHOW_MEDIA_TYPE",
+
+        SHOW_CAPS_DETAILS = "SHOW_CAPS_DETAILS",
+
+        SHOW_NON_DEFAULT_PARAMS = "SHOW_NON_DEFAULT_PARAMS",
+
+        SHOW_STATES = "SHOW_STATES",
+
+        SHOW_FULL_PARAMS = "SHOW_FULL_PARAMS",
+
+        SHOW_ALL = "SHOW_ALL",
+
+        SHOW_VERBOSE = "SHOW_VERBOSE",
+    }
+
     interface RaiseBase
     {
         source : MediaObject;
@@ -1284,6 +1301,48 @@ declare namespace KurentoClientConstructor
         description : string;
 
         errorCode : number;
+    }
+
+    interface ObjectCreated extends RaiseBase
+    {
+        object : string;
+    }
+
+    interface ObjectDestroyed extends RaiseBase
+    {
+        objectId : string;
+    }
+
+    interface ElementConnected extends RaiseBase
+    {
+        sink : MediaElement;
+
+        mediaType : MediaType;
+
+        sourceMediaDescription : string;
+
+        sinkMediaDescription : string;
+    }
+
+    interface ElementDisconnected extends RaiseBase
+    {
+        sink : MediaElement;
+
+        mediaType : MediaType;
+
+        sourceMediaDescription : string;
+
+        sinkMediaDescription : string;
+    }
+
+    interface UriEndpointStateChanged extends RaiseBase
+    {
+        state : UriEndpointState;
+    }
+
+    interface EndOfStream extends RaiseBase
+    {
+
     }
 
     type AsyncMethodCallback<T> = (
