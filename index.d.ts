@@ -162,7 +162,9 @@ declare namespace KurentoClientConstructor
             event : K
         ) : this;
 
-        public release() : Promise<void>;
+        public release(
+            callback? : AsyncMethodCallback<void>
+        ) : Promise<void>;
 
         public id : string;
 
