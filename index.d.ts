@@ -976,6 +976,10 @@ declare namespace KurentoClientConstructor
             event : K
         ) : this;
 
+        public play(
+            callback? : AsyncMethodCallback<void>
+        ) : Promise<void>;
+
         public getElementGstreamerDot(
             callback? : AsyncMethodCallback<string>
         ) : Promise<string>;
