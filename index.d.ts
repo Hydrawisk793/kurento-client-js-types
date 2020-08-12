@@ -111,6 +111,12 @@ declare namespace KurentoClientConstructor
 
         "MediaPipeline" : MediaPipeline;
 
+        "HubPort" : HubPort;
+
+        "Dispatcher" : Dispatcher;
+
+        "DispatcherOneToMany" : DispatcherOneToMany;
+
         "WebRtcEndpoint" : WebRtcEndpoint;
 
         "PlayerEndpoint" : PlayerEndpoint;
@@ -288,6 +294,78 @@ declare namespace KurentoClientConstructor
         ) : Promise<string[]>;
     }
 
+    interface HubEventHandlerMap extends MediaObjectEventHandlerMap
+    {
+
+    }
+
+    abstract class Hub extends MediaObject
+    {
+        public constructor();
+
+        public getGstreamerDot(
+            callback? : AsyncMethodCallback<string>
+        ) : Promise<string>;
+
+        public getGstreamerDot(
+            details : GstreamerDotDetails,
+            callback? : AsyncMethodCallback<string>
+        ) : Promise<string>;
+
+        public createHubPort(
+            callback? : AsyncMethodCallback<HubPort>
+        ) : Promise<HubPort>;
+    }
+
+    interface DispatcherEventMap extends HubEventHandlerMap
+    {
+
+    }
+
+    class Dispatcher extends Hub
+    {
+        public static readonly constructorParams : {
+            mediaPipeline : {
+                type : "kurento.MediaPipeline";
+                required : true;
+            };
+        };
+
+        public constructor();
+
+        public connect(
+            source : HubPort,
+            sink : HubPort,
+            callback? : AsyncMethodCallback<void>
+        ) : Promise<void>;
+    }
+
+    interface DispatcherOneToManyEventMap extends HubEventHandlerMap
+    {
+
+    }
+
+    class DispatcherOneToMany extends Hub
+    {
+        public static readonly constructorParams : {
+            mediaPipeline : {
+                type : "kurento.MediaPipeline";
+                required : true;
+            };
+        };
+
+        public constructor();
+
+        public removeSource(
+            callback? : AsyncMethodCallback<void>
+        ) : Promise<void>;
+
+        public setSource(
+            source : HubPort,
+            callback? : AsyncMethodCallback<void>
+        ) : Promise<void>;
+    }
+
     class MediaPipeline extends MediaObject
     {
         public constructor();
@@ -463,6 +541,23 @@ declare namespace KurentoClientConstructor
         public getMaxOutputBitrate(
             callback? : AsyncMethodCallback<number>
         ) : Promise<number>;
+    }
+
+    interface HubPortEventHandlerMap extends MediaElementEventHandlerMap
+    {
+
+    }
+
+    class HubPort extends MediaElement
+    {
+        public static readonly constructorParams : {
+            hub : {
+                type : "kurento.Hub";
+                required : true;
+            };
+        };
+
+        public constructor();
     }
 
     interface EndpointEventHandlerMap extends MediaElementEventHandlerMap
