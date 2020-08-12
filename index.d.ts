@@ -221,11 +221,11 @@ declare namespace KurentoClientConstructor
     interface ServerManagerEventHandlerMap extends MediaObjectEventHandlerMap
     {
         "ObjectCreated" : (
-            e : Error
+            e : ObjectCreated
         ) => void;
 
         "ObjectDestroyed" : (
-            e : Error
+            e : ObjectDestroyed
         ) => void;
     }
 
@@ -319,11 +319,11 @@ declare namespace KurentoClientConstructor
     interface MediaElementEventHandlerMap extends MediaObjectEventHandlerMap
     {
         "ElementConnected" : (
-            e : any
+            e : ElementConnected
         ) => void;
 
         "ElementDisconnected" : (
-            e : any
+            e : ElementDisconnected
         ) => void;
 
         "MediaFlowInStateChange" : (
@@ -882,7 +882,7 @@ declare namespace KurentoClientConstructor
     interface UriEndpointEventHandlerMap extends EndpointEventHandlerMap
     {
         "UriEndpointStateChanged" : (
-            e : any
+            e : UriEndpointStateChanged
         ) => void;
     }
 
@@ -938,7 +938,9 @@ declare namespace KurentoClientConstructor
 
     interface PlayerEndpointEventHandlerMap extends UriEndpointEventHandlerMap
     {
-        "EndOfStream" : (e : any) => void;
+        "EndOfStream" : (
+            e : EndOfStream
+        ) => void;
     }
 
     class PlayerEndpoint extends UriEndpoint
