@@ -92,7 +92,7 @@ declare namespace KurentoClientConstructor
 
         public create<T extends keyof MediaObjectMap>(
             type : T,
-            params : any,
+            params : Record<string, any>,
             callback? : AsyncMethodCallback<MediaObjectMap[T]>
         ) : Promise<MediaObjectMap[T]>;
 
@@ -303,7 +303,7 @@ declare namespace KurentoClientConstructor
 
         public create<T extends keyof MediaObjectMap>(
             type : T,
-            params : any,
+            params : Record<string, any>,
             callback? : AsyncMethodCallback<MediaObjectMap[T]>
         ) : Promise<MediaObjectMap[T]>;
 
@@ -767,10 +767,6 @@ declare namespace KurentoClientConstructor
         public removeAllListeners<K extends keyof WebRtcEndpointEventHandlerMap>(
             event : K
         ) : this;
-
-        public create(
-            type : "WebRtcEndpoint"
-        ) : Promise<WebRtcEndpoint>;
 
         public addIceCandidate(
             candidate : IceCandidate,
