@@ -1,6 +1,7 @@
 import { ServerManager } from "./server-manager";
 import { MediaPipeline } from "./media-object";
 import { HubPort } from "./hub-port";
+import { Composite } from "./composite";
 import { Dispatcher } from "./dispatcher";
 import { DispatcherOneToMany } from "./dispatcher-one-to-many";
 import { WebRtcEndpoint } from "./web-rtc-endpoint";
@@ -14,6 +15,8 @@ export declare interface MediaObjectMap
     "MediaPipeline" : MediaPipeline;
 
     "HubPort" : HubPort;
+
+    "Composite" : Composite;
 
     "Dispatcher" : Dispatcher;
 
