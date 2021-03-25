@@ -84,16 +84,25 @@ export declare abstract class MediaObject extends EventEmitter
         callback? : AsyncMethodCallback<MediaPipeline>
     ) : Promise<MediaPipeline>;
 
-    public getParent(
-        callback? : AsyncMethodCallback<MediaObject>
-    ) : Promise<MediaObject>;
-
     public getName(
         callback? : AsyncMethodCallback<string>
     ) : Promise<string>;
 
+    public getParent(
+        callback? : AsyncMethodCallback<MediaObject>
+    ) : Promise<MediaObject>;
+
+    public getSendTagsInEvents(
+        callback? : AsyncMethodCallback<boolean>
+    ) : Promise<boolean>;
+
     public setName(
         name : string,
+        callback? : AsyncMethodCallback<void>
+    ) : Promise<void>;
+
+    public setSendTagsInEvents(
+        sendTagsInEvents : boolean,
         callback? : AsyncMethodCallback<void>
     ) : Promise<void>;
 }
