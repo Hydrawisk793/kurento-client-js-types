@@ -26,7 +26,8 @@
     },
     "homepage": "https://github.com/Hydrawisk793/kurento-client-js-types#readme",
     "scripts": {
-        "lint": "tsc -p tsconfig.json"
+        "lint": "tsc -p tsconfig.json",
+        "prepack": "npm install"
     },
     "bundledDependencies": [],
     "dependencies": {
