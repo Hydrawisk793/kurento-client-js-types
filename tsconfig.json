@@ -10,7 +10,7 @@
         ]
     },
     "include": [
-        "index.d.ts"
+        "src"
     ],
     "exclude": [
         "dist",

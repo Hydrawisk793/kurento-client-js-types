@@ -5,9 +5,9 @@
     "author": "Hydrawisk793",
     "license": "MIT",
     "main": "",
-    "types": "index.d.ts",
+    "types": "src/index.d.ts",
     "files": [
-        "index.d.ts"
+        "src"
     ],
     "keywords": [
         "kurento",
