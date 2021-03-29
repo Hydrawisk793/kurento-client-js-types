@@ -35,6 +35,11 @@ declare namespace kurento
     export import ServerManagerEventHandlerMap = _kurento.ServerManagerEventHandlerMap;
     export import ObjectCreated = _kurento.ObjectCreated;
     export import ObjectDestroyed = _kurento.ObjectDestroyed;
+    export import MediaElement = _kurento.MediaElement;
+    export import MediaElementEventHandlerMap = _kurento.MediaElementEventHandlerMap;
+    export import ElementConnected = _kurento.ElementConnected;
+    export import ElementDisconnected = _kurento.ElementDisconnected;
+    export import MediaType = _kurento.MediaType;
     export import Hub = _kurento.Hub;
     export import HubEventHandlerMap = _kurento.HubEventHandlerMap;
     export import GstreamerDotDetails = _kurento.GstreamerDotDetails;

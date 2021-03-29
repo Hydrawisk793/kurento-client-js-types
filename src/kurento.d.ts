@@ -19,6 +19,7 @@ export * from "./raise-base";
 export * from "./media-object";
 export * from "./server-manager";
 export * from "./hub";
+export * from "./media-element";
 export * from "./hub-port";
 export * from "./composite";
 export * from "./dispatcher";
