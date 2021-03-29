@@ -61,14 +61,25 @@ export declare interface KurentoClient extends EventEmitter
 export declare interface KurentoClientConstructor
 {
     (
-        ws_uri: string,
-        callback? : AsyncMethodCallback<KurentoClient>
-    ) : Promise<KurentoClient>;
-
-    (
-        ws_uri: string,
-        options : KurentoClientDict,
-        callback? : AsyncMethodCallback<KurentoClient>
+        ...args : (
+            [
+                ws_uri : string,
+            ]
+            | 
+            [
+                ws_uri : string,
+                callback : AsyncMethodCallback<KurentoClient>
+            ]
+            | [
+                ws_uri : string,
+                options : KurentoClientDict,
+            ]
+            | [
+                ws_uri : string,
+                options : KurentoClientDict,
+                callback : AsyncMethodCallback<KurentoClient>
+            ]
+        )
     ) : Promise<KurentoClient>;
 
     getSingleton(
