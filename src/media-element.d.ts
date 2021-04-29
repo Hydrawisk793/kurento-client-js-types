@@ -141,15 +141,15 @@ export declare interface MediaElementEventHandlerMap extends MediaObjectEventHan
     ) => void;
 
     "MediaFlowInStateChange" : (
-        e : any
+        e : MediaFlowInStateChange
     ) => void;
 
     "MediaFlowOutStateChange" : (
-        e : any
+        e : MediaFlowOutStateChange
     ) => void;
 
     "MediaTranscodingStateChange" : (
-        e : any
+        e : MediaTranscodingStateChange
     ) => void;
 }
 
@@ -175,6 +175,33 @@ export interface ElementDisconnected extends RaiseBase
     sinkMediaDescription : string;
 }
 
+export interface MediaFlowInStateChange extends RaiseBase
+{
+    mediaType : MediaType;
+
+    padName : string;
+
+    state : MediaFlowState;
+}
+
+export interface MediaFlowOutStateChange extends RaiseBase
+{
+    mediaType : MediaType;
+
+    padName : string;
+
+    state : MediaFlowState;
+}
+
+export interface MediaTranscodingStateChange extends RaiseBase
+{
+    state : MediaTranscodingState;
+
+    binName : string;
+
+    mediaType : MediaType;
+}
+
 export declare const enum MediaType
 {
     AUDIO = "AUDIO",
@@ -182,4 +209,18 @@ export declare const enum MediaType
     DATA = "DATA",
 
     VIDEO = "VIDEO",
+}
+
+export declare const enum MediaFlowState
+{
+    FLOWING = "FLOWING",
+
+    NOT_FLOWING = "NOT_FLOWING",
+}
+
+export declare const enum MediaTranscodingState
+{
+    TRANSCODING = "TRANSCODING",
+
+    NOT_TRANSCODING = "NOT_TRANSCODING",
 }

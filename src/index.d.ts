@@ -40,6 +40,8 @@ declare namespace kurento
     export import ElementConnected = _kurento.ElementConnected;
     export import ElementDisconnected = _kurento.ElementDisconnected;
     export import MediaType = _kurento.MediaType;
+    export import MediaFlowState = _kurento.MediaFlowState;
+    export import MediaTranscodingState = _kurento.MediaTranscodingState;
     export import Hub = _kurento.Hub;
     export import HubEventHandlerMap = _kurento.HubEventHandlerMap;
     export import GstreamerDotDetails = _kurento.GstreamerDotDetails;
